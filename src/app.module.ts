@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Customer } from './entities/Customer.entity';
+import { Customers } from './entities/Customer.entity';
 import { CustomerModule } from './components/customer/customer.module';
 
 @Module({
@@ -14,7 +14,7 @@ import { CustomerModule } from './components/customer/customer.module';
       username: 'root',
       password: '1234',
       database: 'sql_store',
-      entities: [Customer],
+      entities: [Customers],
       synchronize: false,
     }),
     CustomerModule,

@@ -1,8 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { Customers } from 'src/entities/Customer.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class CustomerService {
-  fetchAllCustomers() {
-    return 'hi from customers in service';
+  constructor(
+    @InjectRepository(Customers)
+    private customerRepository: Repository<Customers>,
+  ) {}
+
+  fetchAllCustomers(): Promise<Customers[]> {
+    return this.customerRepository.find();
+  }
+
+  fetchOneCustomer(customer_id: number): Promise<Customers> {
+    return this.customerRepository.findOneBy({ customer_id });
   }
 }
