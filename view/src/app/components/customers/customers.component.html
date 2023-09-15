@@ -1,2 +1,47 @@
-<p>customers works!</p>
-<div *ngFor="let customer of customers">{{ customer.customer_id }}</div>
+<p-table
+  [value]="customers"
+  styleClass="p-datatable-striped"
+  [tableStyle]="{ 'min-width': '50rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Customer_Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Birth Date</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Points</th>
+      <th>Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-customer>
+    <tr>
+      <td>{{ customer.customer_id }}</td>
+      <td>{{ customer.first_name }}</td>
+      <td>{{ customer.last_name }}</td>
+      <td>{{ customer.birth_date }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.city }}</td>
+      <td>{{ customer.state }}</td>
+      <td>{{ customer.points }}</td>
+      <td>
+        <button
+          pButton
+          type="button"
+          icon="pi pi-wrench"
+          class="p-button-text"
+        ></button>
+        <button
+          pButton
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-text trashbutton"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

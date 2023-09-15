@@ -8,6 +8,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MenubarModule } from 'primeng/menubar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [AppComponent, CustomersComponent, HomepageComponent],
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ButtonModule,
     MenubarModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
